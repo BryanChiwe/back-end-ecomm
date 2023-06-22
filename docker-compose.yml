@@ -12,3 +12,16 @@ services:
       - '5443:5432'
     volumes:
       - ./db4:/var/lib/postgresql/data
+
+  testdb:
+    image: postgres:15.3-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=bryan
+      - POSTGRES_PASSWORD=hello
+      - POSTGRES_DB=next-ecomm
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - '5423:5432'
+    volumes:
+      - ./db/test:/var/lib/postgresql/data
