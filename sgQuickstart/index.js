@@ -1,5 +1,5 @@
 import sgMail from '@sendgrid/mail';
-sgMail.setApiKey('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')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const msg = {
     to: 'bryan@whitesoles.co', // Change to your recipient
