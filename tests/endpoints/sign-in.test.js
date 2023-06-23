@@ -29,7 +29,7 @@ describe("POST /users", () => {
 
     it("accessToken Is returned", async () => {    
         const response = await request(app)
-          .post("/sign-in")
+          .post("/auth")
           .send(user)
           .set('Accept', 'application/json')
         // expect(response.statusCode).toBe(200);
@@ -44,7 +44,7 @@ describe("POST /users", () => {
         }
         
         const response = await request(app)
-          .post("/sign-in")
+          .post("/auth")
           .send(user2)
           .set('Accept', 'application/json')
         expect(response.statusCode).toBe(401);
@@ -59,7 +59,7 @@ describe("POST /users", () => {
         }
         
         const response = await request(app)
-          .post("/sign-in")
+          .post("/auth")
           .send(user3)
           .set('Accept', 'application/json')
         expect(response.statusCode).toBe(401);
