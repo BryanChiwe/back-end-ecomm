@@ -6,6 +6,7 @@ import cors from "cors";
 // import { signAccessToken } from "./utils/jwt.js"
 import userRouter from "./src/controllers/users.controllers.js"
 import authRouter from "./src/controllers/auth.controllers.js"
+import auth from "./src/middlewares/auth.js"
 import morgan from "morgan"
 // import { filter } from '../utils/common.js'
 
@@ -20,6 +21,10 @@ app.use('/users', userRouter)
 app.use('/auth', authRouter)
 app.use(morgan('combined'))
 
+//trying to add in new auth code from middlewares auth.js
+app.get('/protected', auth, (req, res) => {
+  res.json({ "hello": "world" })
+})
 
 //to get the user details of all the users
 // app.get('/', async (req, res) => {
