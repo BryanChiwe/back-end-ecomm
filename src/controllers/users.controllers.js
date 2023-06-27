@@ -4,9 +4,9 @@ import { Prisma } from "@prisma/client"
 import prisma from "../utils/prisma.js"
 import { validateUser } from "../validators/users.js"
 import { filter } from "../utils/common.js"
-import sgMail from '@sendgrid/mail';
+// import sgMail from '@sendgrid/mail';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const router = express.Router()
 
 router.post('/', async (req, res) => {

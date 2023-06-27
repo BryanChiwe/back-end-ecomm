@@ -6,6 +6,7 @@ import cors from "cors";
 // import { signAccessToken } from "./utils/jwt.js"
 import userRouter from "./src/controllers/users.controllers.js"
 import authRouter from "./src/controllers/auth.controllers.js"
+import imagesRouter from "./src/controllers/images.controllers.js"
 import auth from "./src/middlewares/auth.js"
 import morgan from "morgan"
 // import { filter } from '../utils/common.js'
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(cors())
 app.use('/users', userRouter)
 app.use('/auth', authRouter)
+app.use('/images', imagesRouter)
 app.use(morgan('combined'))
 
 //trying to add in new auth code from middlewares auth.js
